@@ -1,0 +1,173 @@
+﻿@model SmartCity.ViewModels.RelatorioVm
+
+
+@{ ViewData["Title"] = "Home"; }
+
+<div class="jumbotron" style="padding-top: 10px; padding-bottom: 10px;">
+    <h3></h3>
+
+</div>
+
+<div class="row">
+    <div class="col-lg-12 text-center">
+
+        <span class="text-capitalize"><b>DATA/HORA: @Model.LastSet.DateOnlyString @Model.LastSet.TimeOnlyString</b></span>
+
+    </div>
+    <br />
+    <div class="col-lg-12 text-center">
+        <div class="card-group">
+            <div class="card">
+                @if (@Model.LastSet.EstacionamentoId1 == 1)
+                {
+                    @if (@Model.LastSet.Estacionamento1.Value < 5)
+                    {
+                        <img src="~/images/red-300x300.png" class="card-img-top" alt="...">
+                    <div class="card-body  d-flex justify-content-center flex-nowrap">
+                        <h6 class="card-title ">
+
+                                <img src="~/images/1.svg" alt="" width="80" height="80" />
+                        </h6>
+                     
+
+                    </div>
+                    <div class="card-footer">
+                            <small class="text-muted"><b>@Model.LastSet.Estacionamento1</b></small>
+                    </div>
+                    }
+                    else
+                    {
+                        <img src="~/images/verde-300x300.png" class="card-img-top" alt="...">
+                    <div class="card-body  d-flex justify-content-center flex-nowrap">
+                        <h6 class="card-title ">
+
+                                <img src="~/images/1.svg" alt="" width="80" height="80" />
+                        </h6>
+              
+
+
+                    </div>
+                    <div class="card-footer">
+                            <small class="text-muted"><b>@Model.LastSet.Estacionamento1</b></small>
+                    </div>
+                    }
+                }
+            </div>
+            <div class="card">
+                @if (@Model.LastSet.EstacionamentoId2 == 2)
+                {
+                    @if (@Model.LastSet.Estacionamento2.Value < 5)
+                    {
+                        <img src="~/images/red-300x300.png" class="card-img-top" alt="...">
+                        <div class="card-body  d-flex justify-content-center flex-nowrap">
+                            <h6 class="card-title ">
+
+                                <img src="~/images/2.svg" alt="" width="80" height="80" />
+                            </h6>
+
+
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted"><b>@Model.LastSet.Estacionamento2</b></small>
+                        </div>
+                    }
+                    else
+                    {
+                        <img src="~/images/verde-300x300.png" class="card-img-top" alt="...">
+                        <div class="card-body  d-flex justify-content-center flex-nowrap">
+                            <h6 class="card-title ">
+
+                                <img src="~/images/2.svg" alt="" width="80" height="80" />
+                            </h6>
+
+
+
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted"><b>@Model.LastSet.Estacionamento2</b></small>
+                        </div>
+                    }
+                }
+
+            </div>
+             <div class="card">
+                @if (@Model.LastSet.EstacionamentoId3 == 3)
+                {
+                    @if (@Model.LastSet.Estacionamento3.Value < 5)
+                    {
+                        <img src="~/images/red-300x300.png" class="card-img-top" alt="...">
+                        <div class="card-body  d-flex justify-content-center flex-nowrap">
+                            <h6 class="card-title ">
+
+                                <img src="~/images/3.svg" alt="" width="80" height="80" />
+                            </h6>
+
+
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted"><b>@Model.LastSet.Estacionamento3</b></small>
+                        </div>
+                    }
+                    else
+                    {
+                        <img src="~/images/verde-300x300.png" class="card-img-top" alt="...">
+                        <div class="card-body  d-flex justify-content-center flex-nowrap">
+                            <h6 class="card-title ">
+
+                                <img src="~/images/3.svg" alt="" width="80" height="80" />
+                            </h6>
+
+
+
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted"><b>@Model.LastSet.Estacionamento3</b></small>
+                        </div>
+                    }
+                }
+
+            </div>
+            <div class="card">
+                @if (@Model.LastSet.EstacionamentoId4 == 4)
+                {
+                    @if (@Model.LastSet.Estacionamento4.Value < 5)
+                    {
+                        <img src="~/images/red-300x300.png" class="card-img-top" alt="...">
+                        <div class="card-body  d-flex justify-content-center flex-nowrap">
+                            <h6 class="card-title ">
+
+                                <img src="~/images/4.svg" alt="" width="80" height="80" />
+                            </h6>
+
+
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted"><b>@Model.LastSet.Estacionamento4</b></small>
+                        </div>
+                    }
+                    else
+                    {
+                        <img src="~/images/verde-300x300.png" class="card-img-top" alt="...">
+                        <div class="card-body  d-flex justify-content-center flex-nowrap">
+                            <h6 class="card-title ">
+
+                                <img src="~/images/4.svg" alt="" width="80" height="80" />
+                            </h6>
+
+
+
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted"><b>@Model.LastSet.Estacionamento4</b></small>
+                        </div>
+                    }
+                }
+
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+   
+}
