@@ -20,9 +20,9 @@ bool connected = false;
 WiFiClient client;
 
 // Definição dos pinos dos sensores e LEDs
-const int trigPins[4] = {1, 2, 3, 4  };
-const int echoPins[4] = {23, 25, 27, 29};
-const int ledPins[4] = {34, 35, 36, 37};
+const int trigPins[4] = {2, 4, 6, 8  };
+const int echoPins[4] = {3, 5, 7, 9};
+const int ledPins[4] = {10, 11, 12, 13};
  int sensor[4] = {1, 2, 3, 4  };
 //FIM - DEFINIÇÕES DE VARIÁVEIS E OBJETOS
 /*
@@ -78,6 +78,8 @@ digitalWrite(trigPin, LOW);
   int distance = duration * 0.034 / 2;
    
   return distance;
+
+  
 }
 /* Método que realiza a tarefa de enviar as leituras 
  *para um serviço externo neste caso um servidor web  
@@ -121,7 +123,7 @@ void setup() {
      wificonnect(ssid, pass);
   Serial.begin(9600);
 
-  for (int i = 1; i <= 4; i++) {
+  for (int i = 0; i < 4; i++) {
     pinMode(trigPins[i], OUTPUT);
     pinMode(echoPins[i], INPUT);
     pinMode(ledPins[i], OUTPUT);
@@ -139,15 +141,13 @@ for (int i = 0; i < 4; i++)
     Serial.print(measureDistance(trigPins[i], echoPins[i]));
     Serial.println(" cm");
 
-    // Verifica a distância e controla o LED correspondente
-    if (distance < 5)
-    {
-      digitalWrite(ledPins[i], LOW);  // Desliga o LED
-    } 
-    else
-    {
-      digitalWrite(ledPins[i], HIGH); // Liga o LED
-    }   
+  int dist = measureDistance(trigPins[i], echoPins[i]);
+ // Verifica a distância e controla os LEDs correspondentes
+    if (dist < 5) {
+      digitalWrite(ledPins[i], LOW);  // Desliga o LED correspondente
+    } else {
+      digitalWrite(ledPins[i], HIGH); // Liga o LED correspondente
+    }  
 }
 
  for (int i = 0; i < 4; i++)
