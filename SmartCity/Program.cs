@@ -14,7 +14,7 @@ builder.Services.AddDbContext<SmartCityDbContext>(options => options.UseSqlServe
 
 var app = builder.Build();
 
-InitializeDatabase.SeedData(app);
+//InitializeDatabase.SeedData(app);
 
 // Configuração do HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
